@@ -1,0 +1,57 @@
+/**
+ * Valid PEG.js LiveScript grammar
+ *
+ * - basic GraphQL-like key/value hierarchical definition
+ *
+ * query friendsOfFriends {
+ *   alice: user(id: 4, active: true) {
+ *     friends {
+ *       friends(first: 10) {
+ *         name
+ *       }
+ *     }
+ *   }
+ * }
+ *
+ */
+{
+  function field type, name, body
+    with {type, name}
+      ..body = body if body and body.length
+
+  function any pred, xs
+    for x in xs when pred x
+      return true
+    false
+}
+
+Grammar    = __ definitionlist:Definition* __ { definitionlist }
+
+Definition = OperationDefinition
+
+OperationDefinition = type:Symbol &{ any (==type), <[ query type ]> } __ name:Symbol __ body:Branch? __ {
+    field type, name, body
+  }
+
+FieldDefinition = alias:(a:Symbol __ ':' { a })? !{ alias == '__type' } __ name:Symbol __ args:Arguments? __ body:Branch? __ {
+    field 'field', name, body
+      ..alias = that if alias
+      ..args = that if args
+  }
+
+Arguments = '(' __ args:Argument+ __ ')' { args }
+
+Argument  = name:Symbol __ ':' __ value:Value __ { {name, value} }
+
+Branch = BranchBegin __ attrs:FieldDefinition* __ BranchEnd { attrs }
+
+BranchBegin = '{'
+
+BranchEnd   = '}'
+
+Value  "value"  = c:[_0-9A-Za-z]* { c.join '' }
+
+Symbol "symbol" = h:[_A-Za-z] t:[_0-9A-Za-z]* { h ++ t.join '' }
+
+__ "space character"
+  = [\r\n \t\u000C,]*

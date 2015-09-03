@@ -1,0 +1,4 @@
+/**
+ * Invalid LiveScript action code
+ */
+Grammar = 'test' { livescript..syntax..error }
