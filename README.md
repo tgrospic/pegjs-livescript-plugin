@@ -1,6 +1,7 @@
 # PEG.js LiveScript plugin
 
-[![Build Status][travis-image]][travis-url]
+[![build status][travis-image]][travis-url]
+[![npm version][version-image]][version-url]
 
 [PEG.js][peg-js] is a great tool for generating parsers in JavaScript with very concise grammar.  
 For more in-depth entertainment on packrat parsers and PEGs;
@@ -109,4 +110,6 @@ $ npm test
 
 [travis-image]: https://api.travis-ci.org/tgrospic/pegjs-livescript-plugin.svg
 [travis-url]: https://travis-ci.org/tgrospic/pegjs-livescript-plugin
+[version-image]: https://badge.fury.io/js/pegjs-livescript-plugin.svg
+[version-url]: http://badge.fury.io/js/pegjs-livescript-plugin
 [license]: https://github.com/tgrospic/pegjs-livescript-plugin/blob/master/LICENSE
