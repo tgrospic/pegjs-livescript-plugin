@@ -20,10 +20,8 @@ Context `this` or `@` remains unchanged._
 ## Installation
 
 ```sh
-$ npm install tgrospic/pegjs-livescript-plugin
+$ npm install pegjs-livescript-plugin
 ```
-
-npm package coming soon...
 
 ## Usage
 
