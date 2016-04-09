@@ -110,6 +110,6 @@ $ npm test
 
 [travis-image]: https://api.travis-ci.org/tgrospic/pegjs-livescript-plugin.svg
 [travis-url]: https://travis-ci.org/tgrospic/pegjs-livescript-plugin
-[version-image]: https://badge.fury.io/js/pegjs-livescript-plugin.svg
-[version-url]: http://badge.fury.io/js/pegjs-livescript-plugin
+[version-image]: https://img.shields.io/npm/v/pegjs-livescript-plugin.svg
+[version-url]: https://www.npmjs.com/package/pegjs-livescript-plugin
 [license]: https://github.com/tgrospic/pegjs-livescript-plugin/blob/master/LICENSE
