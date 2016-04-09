@@ -31,7 +31,7 @@ function peg-pass-ls
     | 'choice'   => expr.alternatives
     | 'sequence' => expr.elements
     | 'rule'     , 'named'
-    , 'action'   , 'labeled'
+    , 'action'   , 'labeled'     , 'group'
     , 'text'     , 'simple_and'  , 'simple_not'
     , 'optional' , 'zero_or_more', 'one_or_more'
                  => [expr.expression]
