@@ -47,8 +47,8 @@ $ pegjs --plugin pegjs-livescript-plugin my-grammar.pegls
 
 #### PEG.js LiveScript
 
-```pegls
-// .pegls - PEG.js LiveScript grammar
+```ls
+# .pegls - PEG.js LiveScript grammar
 {
   my-var = 42
 
@@ -66,7 +66,7 @@ Start
 
 compiles to JavaScript
 
-```pegjs
+```js
 {
   var myVar, joinChars;
   myVar = 42;

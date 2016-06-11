@@ -25,7 +25,34 @@ test 'should parse with generated parser', (t) ->
         }
       }
     }'''
-  t.deepEqual ast.0.body.0.args.1, name: 'active', value: 'true'
+
+  expected =
+    type: "query"
+    name: "friendsOfFriends"
+    body:
+      type: "field"
+      name: "user"
+      body:
+        type: "field"
+        name: "friends"
+        body:
+          type: "field"
+          name: "friends"
+          body: ["type":"field" "name":"name"]
+          args: ["name":"first" "value":"10"]
+          ...
+        ...
+      alias: "alice"
+      args:
+        * name: "id"
+          value: "4"
+        * name: "active"
+          value: "true"
+      ...
+    ...
+
+  t.deepEqual ast, expected
+
 
 test 'should error with invalid livescript code', (t) ->
   t.plan 2
